@@ -9,7 +9,7 @@
 listint_t *swap_node(listint_t *node, listint_t **list)
 {
 	listint_t *end = node->prev, *curr = node;
-	
+
 	end->next = curr->next;
 	if (curr->next)
 		curr->next->prev = end;
@@ -25,7 +25,7 @@ listint_t *swap_node(listint_t *node, listint_t **list)
 
 
 /**
- * cocktail_sort_list - this is a cocktail sort implementation that works 
+ * cocktail_sort_list - this is a cocktail sort implementation that works
  * on a doubly linked list
  * @list: the doubly linked list
  */
