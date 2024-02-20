@@ -1,50 +1,34 @@
 #include "sort.h"
 /**
- * insertion_sort_list - A function that sorts a doubly linked 
- * list in ascending order
- * @list: the doubly linked list to sort
- *
- * Return: void
+ * selection_sort - function that sorts an array of integers in ascending
+ * order using the Selection sort
+ * @array: the array to be sorted
+ * @size: the number of elements in the array
  */
-void insertion_sort_list(listint_t **list)
+void selection_sort(int *array, size_t size)
 {
-	listint_t *node;
+	size_t i, idx;
+	int temp, swap, flag = 0;
 
-	if (list == NULL || (*list)->next == NULL)
+	if (array == NULL)
 		return;
-	node = (*list)->next;
-	while (node)
+	for (i = 0; i < size; i++)
 	{
-		while ((node->prev) && (node->prev->n > node->n))
+		temp = i;
+		flag = 0;
+		for (idx = i + 1; idx < size; idx++)
 		{
-			node = swap_node(node, list);
-			print_list(*list);
+			if (array[temp] > array[idx])
+			{
+				temp = idx;
+				flag += 1;
+			}
 		}
-		node = node->next;
+		swap = array[i];
+		array[i] = array[temp];
+		array[temp] = swap;
+		if (flag != 0)
+			print_array(array, size);
 	}
-}
-
-/**
- * swap_node -  function to swap a node
- * @node: the node to swap
- * @list: the node list
- *
- * Return: return the node swapped
- */
-listint_t *swap_node(listint_t *node, listint_t **list)
-{
-	listint_t *end = node->prev, *curr = node;
-
-	end->next = curr->next;
-	if (curr->next)
-		curr->next->prev = end;
-	curr->next = end;
-	curr->prev = end->prev;
-	end->prev = curr;
-	if (curr->prev)
-		curr->prev->next = curr;
-	else
-		*list = curr;
-	return (curr);
 }
 
