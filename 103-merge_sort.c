@@ -11,7 +11,7 @@ void merge(int *array, int *temp, int start, int mid, int end)
 {
 	int sl = mid - start + 1, sr = end - mid;
 	int *al, *ar;
-	
+
 	int left, right, i = 0;
 
 	al = &temp[0];
@@ -21,7 +21,7 @@ void merge(int *array, int *temp, int start, int mid, int end)
 	for (right = 0; right < sr; right++)
 		ar[right] = array[mid + 1 + right];
 	left = 0, right = 0, i = start;
-	
+
 	while (left < sl && right < sr)
 	{
 		if (al[left] <= ar[right])
@@ -30,10 +30,10 @@ void merge(int *array, int *temp, int start, int mid, int end)
 			array[i] = ar[right], right++;
 		i++;
 	}
-	
+
 	while (left < sl)
 		array[i] = al[left], left++, i++;
-	
+
 	while (right < sr)
 		array[i] = ar[right], right++, i++;
 	printf("Merging...\n");
