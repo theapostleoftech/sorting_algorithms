@@ -1,4 +1,4 @@
-i#include "sort.h"
+#include "sort.h"
 /**
 * swap_elements - a function that swaps elements in an array
 * @array: the array to be swapped
@@ -49,13 +49,13 @@ int lomuto_partition(int *array, ssize_t first, ssize_t last, size_t size)
 }
 
 /**
- * qsort - quicksort algorithm implementation
+ * q_sort - quicksort algorithm implementation
  * @array: the array to be sorted
  * @first: the first element in the array
  * @last: the last element in the array
  * @size: the size of the array
  */
-void qsort(int *array, ssize_t first, ssize_t last, int size)
+void q_sort(int *array, ssize_t first, ssize_t last, int size)
 {
 	ssize_t ps = 0;
 
@@ -64,8 +64,8 @@ void qsort(int *array, ssize_t first, ssize_t last, int size)
 	{
 		ps = lomuto_partition(array, first, last, size);
 
-		qsort(array, first, ps - 1, size);
-		qsort(array, ps + 1, last, size);
+		q_sort(array, first, ps - 1, size);
+		q_sort(array, ps + 1, last, size);
 	}
 }
 
@@ -79,6 +79,6 @@ void quick_sort(int *array, size_t size)
 {
 	if (!array || size < 2)
 		return;
-	qs(array, 0, size - 1, size);
+	q_sort(array, 0, size - 1, size);
 }
 
