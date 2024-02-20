@@ -34,7 +34,11 @@ void cocktail_sort_list(listint_t **list)
 	listint_t *node;
 	int swapped = 1;
 
-	if (list == '\0' || (*list) == '\0' || (*list)->next == '\0')
+	if (list == NULL)
+		return;
+	if ((*list) == NULL)
+		return;
+	if ((*list)->next == NULL)
 		return;
 	node = *list;
 	while (swapped == 1)
