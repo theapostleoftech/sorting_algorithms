@@ -7,10 +7,10 @@
  */
 void counting_sort(int *array, size_t size)
 {
-	int idx, max_element = 0, *counter = '\0', *temp = '\0';
+	int idx, max_element = 0, *counter = NULL, *temp = NULL;
 	size_t i;
 
-	if (array == '\0' || size < 2)
+	if (array == NULL || size < 2)
 		return;
 
 	for (i = 0; i < size; i++)

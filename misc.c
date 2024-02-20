@@ -11,12 +11,12 @@ void *_calloc(unsigned int element, unsigned int size)
 	char *ptr;
 
 	if (element == 0 || size == 0)
-		return ('\0');
+		return (NULL);
 	ptr = malloc(element * size);
-	if (ptr == '\0')
-		return ('\0');
+	if (ptr == NULL)
+		return (NULL);
 	for (i = 0; i < (element * size); i++)
-		ptr[i] = '\0';
+		ptr[i] = 0;
 	return (ptr);
 }
 
