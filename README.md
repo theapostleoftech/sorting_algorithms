@@ -1,1 +1,1 @@
-Sor
+Sort
