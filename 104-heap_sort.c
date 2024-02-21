@@ -51,7 +51,7 @@ void heap_sort(int *array, size_t size)
 {
 	int i;
 
-	if (array == '\0' || size < 2)
+	if (array == NULL || size < 2)
 		return;
 
 	for (i = (size - 2) / 2; i >= 0; --i)
@@ -64,3 +64,4 @@ void heap_sort(int *array, size_t size)
 		max_heap(array, size, 0, i);
 	}
 }
+
