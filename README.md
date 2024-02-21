@@ -1,1 +1,1 @@
-Sorthing Alg 
+Sorthing Algo 
