@@ -1,1 +1,1 @@
-Sorthing Algorith
+Sorthing Algorithm
