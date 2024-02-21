@@ -6,7 +6,7 @@
 * @element_a: the first element
 * @element_b: the second element
 */
-void swap(int *array, ssize_t element_a, ssize_t element_b)
+void swap_elements(int *array, ssize_t element_a, ssize_t element_b)
 {
 	int temp;
 
