@@ -1,1 +1,1 @@
-Sorthing Algorithms by Deborah .O and Nonso Nwankpa 
+Sorthing Algorithms by Deborah .Ogwuche and Nonso Nwankpa 
